@@ -67,9 +67,12 @@ class Spider(object):
 
 # 下载图片的方法
     def download_pic(self):
-        girl_path = PICTURES_PATH + self.girl_name
         try:
             os.mkdir(PICTURES_PATH)
+        except:
+            pass
+        girl_path = PICTURES_PATH + self.girl_name
+        try:
             os.mkdir(girl_path)
         except Exception as e:
             print("{}已存在".format(self.girl_name))
