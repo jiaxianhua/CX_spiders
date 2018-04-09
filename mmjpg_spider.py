@@ -53,9 +53,9 @@ class Spider(object):
         driver = webdriver.Chrome(chrome_path, chrome_options=chrome_options)
         for girl_url in self.girl_urls:
             driver.get(girl_url)
-            time.sleep(3)
+            time.sleep(2)
             driver.find_element_by_xpath('//em[@class="ch all"]').click()
-            time.sleep(3)
+            time.sleep(2)
             html = driver.page_source
             selector = etree.HTML(html)
             self.girl_name = selector.xpath('//div[@class="article"]/h2/text()')[0]
