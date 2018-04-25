@@ -17,9 +17,9 @@ def get_movie(n):
             movie_name = re.findall('<div class="title_all"><h1><font color=#07519a>(.*?)</font></h1></div>' ,movie_html.text)
             movie_download_url = re.findall('<td style="WORD-WRAP: break-word" bgcolor="#fdfddf"><a href="(.*?)">' ,movie_html.text )
             print(movie_name)
-            with open('/home/chen/workspace/movie.txt', 'a', encoding='utf-8') as ff:
+            with open('movie.txt', 'a', encoding='utf-8') as ff:
                 ff.write(movie_download_url[0] + '\n')
 
 if __name__ == '__main__':
-    page_name = input('请输入页数(<170):')   
-    get_movie(page_name)   
+    page_name = input('请输入页数(<170):')
+    get_movie(page_name)
